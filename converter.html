@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Calculator | Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <span>AniCalc</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                <li><a href="converter.html" class="active"><i class="fas fa-exchange-alt"></i> Converter</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <div class="toggle-switch">
+                    <div class="toggle-circle"></div>
+                </div>
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Converter Section -->
+    <section class="converter-section">
+        <div class="converter-header">
+            <h1 class="animated-title">Multi-Unit <span class="highlight">Converter</span></h1>
+            <p class="subtitle">Convert between different units instantly</p>
+        </div>
+        
+        <div class="converter-container">
+            <div class="converter-tabs">
+                <button class="converter-tab active" data-converter="currency">
+                    <i class="fas fa-money-bill-wave"></i> Currency
+                </button>
+                <button class="converter-tab" data-converter="length">
+                    <i class="fas fa-ruler"></i> Length
+                </button>
+                <button class="converter-tab" data-converter="temperature">
+                    <i class="fas fa-thermometer-half"></i> Temperature
+                </button>
+            </div>
+            
+            <!-- Currency Converter -->
+            <div class="converter-content active" id="currency-converter">
+                <div class="converter-inputs">
+                    <div class="input-group">
+                        <label for="currency-amount">Amount</label>
+                        <input type="number" id="currency-amount" value="100" min="0" step="0.01">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="from-currency">From</label>
+                        <select id="from-currency">
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="UZS" selected>UZS - Uzbek Som</option>
+                            <option value="RUB">RUB - Russian Ruble</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                        </select>
+                    </div>
+                    
+                    <div class="swap-button">
+                        <button id="swap-currencies">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="to-currency">To</label>
+                        <select id="to-currency">
+                            <option value="USD" selected>USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="UZS">UZS - Uzbek Som</option>
+                            <option value="RUB">RUB - Russian Ruble</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="converter-result">
+                    <h3>Conversion Result</h3>
+                    <div class="result-box">
+                        <p id="currency-result">100 UZS = 0.0082 USD</p>
+                        <p class="result-date" id="currency-date">Exchange rates update daily</p>
+                    </div>
+                </div>
+                
+                <button id="convert-currency" class="btn-primary convert-btn">
+                    <i class="fas fa-sync-alt"></i> Convert Currency
+                </button>
+            </div>
+            
+            <!-- Length Converter -->
+            <div class="converter-content" id="length-converter">
+                <div class="converter-inputs">
+                    <div class="input-group">
+                        <label for="length-value">Value</label>
+                        <input type="number" id="length-value" value="1" min="0" step="0.01">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="from-length">From</label>
+                        <select id="from-length">
+                            <option value="meter">Meter (m)</option>
+                            <option value="kilometer">Kilometer (km)</option>
+                            <option value="centimeter">Centimeter (cm)</option>
+                            <option value="millimeter">Millimeter (mm)</option>
+                            <option value="mile">Mile (mi)</option>
+                            <option value="yard">Yard (yd)</option>
+                            <option value="foot">Foot (ft)</option>
+                            <option value="inch">Inch (in)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="swap-button">
+                        <button id="swap-length">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="to-length">To</label>
+                        <select id="to-length">
+                            <option value="foot">Foot (ft)</option>
+                            <option value="meter">Meter (m)</option>
+                            <option value="kilometer">Kilometer (km)</option>
+                            <option value="centimeter">Centimeter (cm)</option>
+                            <option value="millimeter">Millimeter (mm)</option>
+                            <option value="mile">Mile (mi)</option>
+                            <option value="yard">Yard (yd)</option>
+                            <option value="inch">Inch (in)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="converter-result">
+                    <h3>Conversion Result</h3>
+                    <div class="result-box">
+                        <p id="length-result">1 m = 3.2808 ft</p>
+                        <p class="result-date">Length conversion</p>
+                    </div>
+                </div>
+                
+                <button id="convert-length" class="btn-primary convert-btn">
+                    <i class="fas fa-sync-alt"></i> Convert Length
+                </button>
+            </div>
+            
+            <!-- Temperature Converter -->
+            <div class="converter-content" id="temperature-converter">
+                <div class="converter-inputs">
+                    <div class="input-group">
+                        <label for="temp-value">Temperature</label>
+                        <input type="number" id="temp-value" value="0" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="from-temp">From</label>
+                        <select id="from-temp">
+                            <option value="celsius">Celsius (°C)</option>
+                            <option value="fahrenheit">Fahrenheit (°F)</option>
+                            <option value="kelvin">Kelvin (K)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="swap-button">
+                        <button id="swap-temp">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="to-temp">To</label>
+                        <select id="to-temp">
+                            <option value="fahrenheit">Fahrenheit (°F)</option>
+                            <option value="celsius">Celsius (°C)</option>
+                            <option value="kelvin">Kelvin (K)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="converter-result">
+                    <h3>Conversion Result</h3>
+                    <div class="result-box">
+                        <p id="temp-result">0 °C = 32 °F</p>
+                        <p class="result-date">Temperature conversion</p>
+                    </div>
+                </div>
+                
+                <button id="convert-temp" class="btn-primary convert-btn">
+                    <i class="fas fa-sync-alt"></i> Convert Temperature
+                </button>
+            </div>
+            
+            <div class="conversion-info">
+                <h3><i class="fas fa-info-circle"></i> Conversion Rates</h3>
+                <p>Currency conversion uses real-time exchange rates. Length and temperature conversions use standard conversion formulas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-calculator"></i>
+                <span>AniCalc</span>
+            </div>
+            <p class="footer-text">© 2023 Animated Calculator. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-codepen"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# kalkulyator
+zamonaviy kalkulyator sayti 

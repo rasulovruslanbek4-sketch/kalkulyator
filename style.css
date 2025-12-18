@@ -69,9 +69,6 @@ body.dark-mode .navbar {
     margin-right: 0.5rem;
     font-size: 2rem;
 }
-.logo a {
-    text-decoration: line-through overline;
-}
 
 .nav-menu {
     display: flex;
@@ -1020,4 +1017,5 @@ body.dark-mode footer {
     }
 
 }
+
 
